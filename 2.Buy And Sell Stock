@@ -1,0 +1,20 @@
+//2.Buy And Sell Stock
+
+class Solution {
+public:
+    int maxProfit(vector<int>& p) {
+        int min=p[0];
+        int temp=0;
+        int pro=0;
+        for(int i=0;i<=p.size()-1;i++){
+            if(min>p[i]){
+                min=p[i];
+            }
+            temp=p[i]-min;
+            if(temp>pro){
+                pro=temp;
+            }
+        }
+        return pro;
+    }
+};
