@@ -1,0 +1,32 @@
+//16. Merge Two Sorted LinkedList
+
+Node<int>* temp=new Node<int>(-1);
+Node<int>* ans=temp;
+
+while(l1 && l2){
+    if(l1->data<=l2->data){
+        Node<int>* o=new Node<int>(l1->data);
+        l1=l1->next;
+        ans->next=o;
+        ans=o;
+    }
+    else if(l2->data<l1->data){
+        Node<int>* o=new Node<int>(l2->data);
+        l2=l2->next;
+        ans->next=o;
+        ans=o;
+    }
+}
+while(l1){
+    Node<int>* o=new Node<int>(l1->data);
+    l1=l1->next;
+    ans->next=o;
+    ans=o;
+}
+while(l2){
+    Node<int>* o=new Node<int>(l2->data);
+    l2=l2->next;
+    ans->next=o;
+    ans=o;
+}
+return temp->next;
