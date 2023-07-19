@@ -1,4 +1,4 @@
-//10. Reverse a LinkedList
+//14. Reverse a LinkedList
 
 ListNode* p=head;
 ListNode* q=NULL;
