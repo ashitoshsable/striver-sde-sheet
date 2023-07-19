@@ -1,0 +1,14 @@
+//10. Reverse a LinkedList
+
+ListNode* p=head;
+ListNode* q=NULL;
+ListNode* r=NULL;
+
+while(p){
+    r=q;
+    q=p;
+    p=p->next;
+    q->next=r;
+}
+
+return q;
