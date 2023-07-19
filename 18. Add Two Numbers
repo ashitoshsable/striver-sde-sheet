@@ -1,0 +1,24 @@
+//18. Add Two Numbers
+
+int carry=0,sum=0;
+Node* start=new Node();
+Node* temp=start;
+
+while(l1!=NULL || l2!=NULL || carry){
+    sum=0;
+    if(l1!=NULL){
+        sum+=l1->data;
+        l1=l1->next;
+    }
+    if(l2!=NULL){
+        sum+=l2->data;
+        l2=l2->next;
+    }
+    sum+=carry;
+    carry=sum/10;
+
+    Node* d=new Node(sum%10);
+    temp->next=d;
+    temp=temp->next;
+}
+return start->next;
