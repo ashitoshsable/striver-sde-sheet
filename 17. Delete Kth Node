@@ -1,0 +1,18 @@
+//17. Delete Kth Node
+
+vector<int> ans;
+while(head){
+    ans.push_back(head->data);
+    head=head->next;
+}
+Node* o=new Node(-1);
+Node* ui=o;
+for(int i=0;i<ans.size();i++){
+    if(i!=ans.size()-K){
+        Node* p=new Node(ans[i]);
+        ui->next=p;
+        ui=p;
+    }
+}
+return o->next;
+}
